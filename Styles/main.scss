@@ -1,0 +1,273 @@
+@use './Layout/Pages/home.scss';
+@use './Layout/variables&mixins/ColorsPadding' as *;
+@use './Layout/Pages/footer';
+@use './Layout/Pages/About';
+@use './Layout/Pages/team';
+@use './Layout/Pages/Protfolio';
+@use './Layout/Pages/Contact';
+@use  './Layout/Pages/Services';
+*{
+    margin: 0px;
+    padding: 0px;
+    
+
+}
+a{
+  text-decoration: none !important;
+}
+body{
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden;
+
+}
+:root{
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+/* style special header */
+.special-heading{
+  padding: $paddingSection 0px;
+  text-align: center;
+  h2{
+font-size: 28px;
+          font-weight: 400;
+          text-align: center;
+          margin-bottom: 40px;
+          position: relative;
+          width: fit-content;
+          padding-bottom: 10px;
+          margin: auto auto 30px;
+        &::after{
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          bottom: 0px;
+          left: 0px;
+          background-color: #ddd;
+        }
+        &::before{
+           content: "";
+          bottom: -1px;
+          position: absolute;
+          width: 35px;
+          height: 3px;
+          background-color: #68a4c4;
+          left: 50%;
+          z-index: 5;
+          transform: translateX(-50%);
+        }
+  }
+  p{
+    line-height: 1.6;
+    color: $ParaphColor;
+  }
+}
+
+/* path */
+.path{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px 30px 4%;
+  gap: 10px;
+  h3{
+    text-transform: capitalize;
+        font-size: 26px;
+       font-weight: 300;
+       color: $ParaphColor;
+}
+  p{
+    color: $ParaphColor;
+  a{
+    text-decoration: none;
+    color: #4fa6d5;
+  }}
+  }
+
+
+@media (min-width:768px) {
+ .path{
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0px;
+ } 
+}
+
+
+/* styling  navbar*/ 
+.bars{
+  display: none;
+}
+@media (max-width:768px) {
+  .bars{
+    display: block;
+    color: white;
+    font-size: 30px;
+    transition: 0.3s;
+  }
+  .activeMenu{
+    display: flex !important;
+    z-index: 101;
+  }
+  nav{
+    display: none !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    ul{
+    width: 86vw;
+    padding: 27px 25px;
+    box-sizing: border-box;
+    height: 75vh;
+    align-items: flex-start !important;
+    flex-direction: column;
+    color: #666;
+    background-color: white;
+
+}
+
+    }
+  }
+  
+  nav li{
+    transition: 0.3s;
+  }
+nav li:hover{
+  color: $primaryColor;
+  cursor: pointer;
+}
+nav a{
+  color: white;
+  transition: 0.3s;
+  &:hover{
+    
+    color: $primaryColor;
+  }
+}
+@media (max-width:768px) {
+  nav a{
+    color: $footerColor;
+  }
+  nav a:hover{
+    opacity: 0.6;
+  }
+  .bars{
+    transition: 0.5s;
+  }
+  .bars:hover{
+  i{
+  opacity: 0.5;
+  }
+}
+}
+
+  
+
+/* overlay*/ 
+.overlay{
+  position: absolute;
+  display: none;
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color:rgba(17, 38, 48, 0.9);
+}
+.activeOverlay{
+  display: block;
+
+}
+
+/* styling button of close nav */
+.closenav{
+  display: none;
+  color: black;
+  :hover{
+    opacity: 0.5;
+  }
+}
+
+@media (max-width:768px) {
+  .closenav{
+display: block;
+    color: black;
+    position: absolute;
+    left: 94%;
+  }
+  
+}
+/* end style button of close nav*/
+
+
+/*start animation */
+.hidden-sec{
+  opacity: 0;
+  transform: translateY(8rem);
+}
+.animation-sec{
+  transition: 0.7s;
+}
+
+.primary-section{
+  transform: translateY(1600px);
+transition: 0.7s;
+opacity: 0;
+}
+
+.fixedTop{
+      position: fixed;
+    background-color:$footerColor;
+    width: 100%;
+    z-index: 400;
+    transition: 0.4s;
+    top: 0px;
+}
+
+/* scroll to top  button*/
+.scrollTop{
+      position: fixed;
+      display: none;
+    bottom: 2vh;
+    right: 2vw;
+    background: $primaryColor;
+    padding: 16px;
+    a{
+      color: white;
+    }
+}
+.activeTop{
+  display: block;
+}

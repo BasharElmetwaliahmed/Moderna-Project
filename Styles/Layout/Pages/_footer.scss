@@ -1,0 +1,171 @@
+@use "../variables&mixins/ColorsPadding" as *;
+
+footer{
+            background-color: $footerColor;
+            box-sizing: content-box;
+
+    .footer-form{
+        padding: 70px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        padding-bottom: 70px;
+        div{
+            width: 45%;
+
+            h2{
+                color: $primaryColor;
+                            margin-bottom: 20px;
+
+            }
+            p{
+                color: white;
+                font-size: 14px;
+            }
+        }
+        form{
+            width: 50%;
+    height: 35px;
+    position: relative;
+    box-sizing: border-box;
+            input[type=text]{
+                  width: 95%;
+                  padding: 5px;
+                  margin-right: 0px;
+                  height: 100%;
+                  border: none;
+                  border-radius: 26px;
+                  box-sizing: border-box;
+                  outline: none;
+            }
+            input[type=submit]{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    background-color: #68a4c4;
+    z-index: 5;
+    color: white;
+    padding: 0px 10px;
+    border: none;
+    border-radius: 26px;
+    box-sizing: border-box;
+
+                 z-index: 5;
+                 color: white;
+            }
+        }
+    }
+    hr{
+        border: none;
+        border-top:1px solid $primaryColor ;
+        opacity: 0.5;
+    }
+}
+
+@media (max-width:991px) {
+    .footer-form{
+        flex-direction: column;
+        div{
+            margin-bottom: 20px;
+            width: 80% !important;
+        }
+        form{
+            width: 80% !important;
+        }
+
+    }
+    
+}
+@media screen {
+    
+}
+
+
+footer .links{
+    div,ul{
+        margin-bottom: 30px;
+    }
+display: grid;
+padding: $paddingSection 5vw;
+grid-template-columns: 100%;
+    justify-content: space-evenly;
+  h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: $primaryColor;
+  }
+  a,p{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.7;
+    transition: 0.3s;
+  }
+  a:hover{
+    color: $primaryColor;
+  }
+
+  .info-phone{
+    padding-top: 20px;
+    span{
+        font-weight: 900;
+    }
+  }
+
+
+}
+  .list-links{
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    li{
+        margin-left: 4px;
+    }
+    i{
+        color: #68a4c4;
+    }
+  }
+  .social-links{
+    display: flex;
+    padding-top: 20px;
+    gap: 7px;
+    li{
+        transition: 0.3s;
+        i{
+            font-size: 18px;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        position: relative;
+        width: 35px;
+        height:35px;
+        background-color: #1e4356;
+        border-radius: 50%;
+
+      &:hover{
+    background-color: $primaryColor;
+    cursor: pointer;
+      }
+
+    }
+  }
+@media (min-width:768px) {
+   footer .links{
+    grid-template-columns: repeat(2,40%);
+    padding:$paddingSection 0px ;
+   }   
+    
+}
+
+@media (min-width:992px) {
+   footer .links{
+    grid-template-columns: repeat(4,20%);
+   }   
+}

@@ -1,0 +1,137 @@
+@use '../variables&mixins/ColorsPadding' as *;
+
+.contanct-section{
+padding: $paddingSection 0px 90px;
+display: grid;
+grid-template-columns: 95%;
+justify-content: center;
+        .logo-container{
+        border: 2px $primaryColor dotted;
+        border-radius: 50%;
+                width: 60px !important;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h3{
+        font-size: 20px;
+        color: #666;
+        font-weight: 600;
+    }
+    p{
+        font-size: 14px;
+        color:$ParaphColor;
+        line-height: 1.7;
+    }
+    i{
+        color: $primaryColor;
+        font-size: 32px;
+        font-size: 400;
+
+
+
+    }
+    >div:last-child{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+}
+
+.box-info{
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    gap: 10px;
+}
+@media (min-width:768px) {
+    .contanct-section{
+        .contact-info{
+            >div:last-child{
+                flex-direction: row;
+                justify-content: space-between;
+                div{
+                    width: 48%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:992px) {
+    .contanct-section{
+        grid-template-columns: 48% 48%;
+        justify-content: space-between;
+    }
+    
+}
+
+.contanct-section {
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-sizing: border-box;
+        padding:40px ;
+            box-shadow: 1px 1px 10px #eee;
+            height: fit-content;
+            div{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                gap: 15px;
+
+
+            }
+      input , textarea{
+        border: 1px solid #ced4da;
+        outline: none;
+        padding: 8px 4px;
+      }
+                      input[type="submit"]{
+                    background-color: #8dbad2;
+                    color: white;
+                    padding: 10px 24px;
+                    width: fit-content;
+                    margin: auto;
+
+                }
+
+
+    }
+
+}
+@media (min-width:768px) {
+    .contanct-section{
+        form{
+            div{
+                flex-direction: row;
+                justify-content: space-between;
+                gap:unset;
+                            input{
+                    width: 49%;
+                    box-sizing: border-box;
+
+                }
+                
+            }
+        }
+    }
+    
+}
+/* end contact*/
+/////////////////////////////////////////
